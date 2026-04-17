@@ -15,5 +15,7 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-.. automodule:: math_utils
+.. automodule:: test_code
    :members:
+   :undoc-members:
+   :show-inheritance:
