@@ -13,3 +13,4 @@ dependencies:
       - requests
       - fastapi
       - sphinx
+      - pytest
