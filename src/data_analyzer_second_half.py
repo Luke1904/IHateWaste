@@ -1,4 +1,4 @@
-import pandas as pd 
+import pandas as pd  # pyright: ignore[reportMissingModuleSource]
 from mypackage import *
 import re
 
@@ -28,11 +28,11 @@ def mostpopulardishes(data_frame1):
         Sorted in descending order of popularity.
     """
     # Makes copy so as to not mutate original dataframe
-    data_frame1 = data_frame1.copy()
+    data_frame1_copy = data_frame1.copy()
 
     # Group by dish name and count occurrences
     data_frame_most_popular = (
-        data_frame1.groupby("NAME_x")
+        data_frame1_copy.groupby("NAME_x")
         .size()
         .reset_index(name="count")
     )
@@ -69,14 +69,14 @@ def volumeofdishes(data_frame1):
         Sorted in descending order of volume.
     """
     # Makes copy so as to not mutate original dataframe
-    data_frame1 = data_frame1.copy()
+    data_frame1_copy = data_frame1.copy()
 
     # Extract day of the week from the datetime column
-    data_frame1["day_of_week"] = data_frame1["MONTH_AND_DATE"].dt.day_name()
+    data_frame1_copy["day_of_week"] = data_frame1_copy["MONTH_AND_DATE"].dt.day_name()
 
     # Count number of entries per day
     data_frame_dishes = (
-        data_frame1.groupby("day_of_week")
+        data_frame1_copy.groupby("day_of_week")
         .size()
         .reset_index(name="count")
     )
@@ -90,18 +90,15 @@ def volumeofdishes(data_frame1):
 
 def dishvolume_byday(data_frame1):
     # Makes copy so as to not mutate original dataframe
-    data_frame1 = data_frame1.copy()
+    data_frame1_copy = data_frame1.copy()
 
     # Create a column for day of the week (monday,tuesday,etc.)
-    data_frame1["day_of_week"] = data_frame1["MONTH_AND_DATE"].dt.day_name()
+    data_frame1_copy["day_of_week"] = data_frame1_copy["MONTH_AND_DATE"].dt.day_name()
 
-    result = data_frame1.groupby(["NAME_x", "day_of_week"])["ORDERID"].mean()
-    result = result.sort_values(ascending=False)    # returns it in descending order
-    result = result.rename("Dish volume by day")
-    return result
-
-
-
+    data_frame_dish_by_day = data_frame1_copy.groupby(["NAME_x", "day_of_week"])["ORDERID"].mean()
+    data_frame_dish_by_day = data_frame_dish_by_day.sort_values(ascending=False)    # returns it in descending order
+    data_frame_dish_by_day = data_frame_dish_by_day.rename("Dish volume by day")
+    return data_frame_dish_by_day
 
 # Execute functions
 df1 = mostpopulardishes(data_frame1)
