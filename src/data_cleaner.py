@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import re
 
+path = "/mnt/c/users/djlow/CP2_project/data/github_inventory_unfilltered.xlsx"
+
 def table_merger(df):
 
     df_orders = df1["orders"] # Order ID
@@ -29,8 +31,6 @@ def duplicate_deleter(x):
         raise TypeError("Need pandas dataframe")
     return x.drop_duplicates()
 
-path = "/mnt/c/users/djlow/CP2_project/data/github_inventory_unfilltered.xlsx"
-
 if not re.search(r'\.xlsx$', path):
         raise ValueError("Need an excel")
 
@@ -39,4 +39,6 @@ df1 = pd.read_excel(path, sheet_name=None)
 df1 = table_merger(df1)
 df1 = null_deleter(df1)
 df1 = duplicate_deleter(df1)
-print(df1)
+
+
+df1.to_excel("cleaned_data.xlsx", index=False)
