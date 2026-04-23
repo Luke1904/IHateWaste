@@ -1,0 +1,4 @@
+# Inventory Checker reuirements
+
+pandas>=3.10
+numpy>=2.1
