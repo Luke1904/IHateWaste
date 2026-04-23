@@ -1,9 +1,11 @@
 import pandas as pd
 import numpy as np
 import re
+from mypackage import *
 
-path = "/mnt/c/users/djlow/CP2_project/data/github_inventory_unfilltered.xlsx"
+path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
 
+excel_checker(path)     # calls function from package to check if the path is of the right file type
 
 def table_merger(df):
 
