@@ -1,4 +1,7 @@
-# Inventory Checker reuirements
+# Inventory Checker Requirements
 
-pandas>=3.10
-numpy>=2.1
+pandas==3.0.2
+numpy==2.4.4
+matplotlib==3.10.8
+openpyxl==3.1.5
+fastapi==0.136.0
