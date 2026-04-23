@@ -1,24 +1,17 @@
-import pandas as pd
+import pandas as pd # type: ignore
 import re
-from pandas.tseries.holiday import USFederalHolidayCalendar     # for use in accounting for holidays
+from pandas.tseries.holiday import USFederalHolidayCalendar     # type: ignore # for use in accounting for holidays
 from mypackage import *
 
-path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
-
-excel_checker(path)     # calls function from package to check if the path is of the right file type
-
-df = pd.read_excel(path)
-
-"""
-Creating the calendar for holidays. It is necessary to include a start and end date to this calendar.
-"""
-
-start = df["MONTH_AND_DATE"].min()
-end = df["MONTH_AND_DATE"].max()
-
-cal = USFederalHolidayCalendar()
-holidays = cal.holidays(start=start, end=end)
-
+def create_calendar(df):
+        """
+        Creating the calendar for holidays. It is necessary to include a start and end date to this calendar.
+        """
+        start = df["MONTH_AND_DATE"].min()
+        end = df["MONTH_AND_DATE"].max()
+        cal = USFederalHolidayCalendar()
+        holidays = cal.holidays(start=start, end=end)
+        return holidays
 
 def weekday_income(x):
         """
@@ -32,9 +25,7 @@ def weekday_income(x):
         result = result.rename("Average income by day")
         return result
 
-print(weekday_income(df))
-
-def holiday_earnings(x):
+def holiday_earnings(x, holidays):
         """
         holiday_earnings takes the holiday calendar we defined earlier and examines earnings on holidays
         """
@@ -48,4 +39,8 @@ def holiday_earnings(x):
         result2 = result2.rename("Average earnings on either holiday or non-holiday")
         return result1, result2
 
-print(holiday_earnings(df))
+def run_code():
+        path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
+        excel_checker(path)     # calls function from package to check if the path is of the right file type
+        df = pd.read_excel(path)
+        h_earnings = create_calendar(df)
