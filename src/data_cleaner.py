@@ -3,9 +3,9 @@ import numpy as np
 import re
 from mypackage import *
 
-path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
-
-excel_checker(path)     # calls function from package to check if the path is of the right file type
+def data_checker(x):
+    path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
+    excel_checker(path)     # calls function from package to check if the path is of the right file type
 
 def table_merger(df):
 
@@ -34,17 +34,9 @@ def duplicate_deleter(x):
         raise TypeError("Need pandas dataframe")
     return x.drop_duplicates()
 
-
-if not re.search(r'\.xlsx$', path):
-        raise ValueError("Need an excel")
-
-df1 = pd.read_excel(path, sheet_name=None)
-
-df1 = table_merger(df1)
-df1 = null_deleter(df1)
-df1 = duplicate_deleter(df1)
-
-
-df1.to_excel("cleaned_data.xlsx", index=False)
-
-print(df1)
+def data_saver(x):
+    df1 = pd.read_excel(path, sheet_name=None)
+    df1 = table_merger(df1)
+    df1 = null_deleter(df1)
+    df1 = duplicate_deleter(df1)
+    df1.to_excel("cleaned_data.xlsx", index=False)

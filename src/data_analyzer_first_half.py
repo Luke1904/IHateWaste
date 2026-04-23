@@ -19,16 +19,17 @@ def weekday_income(x):
          """
         x = x.copy()
         x["MONTH_AND_DATE"] = pd.to_datetime(x["MONTH_AND_DATE"])       # makes sure that the inserted date column is datetime
-        x["day"] = df["MONTH_AND_DATE"].dt.day_name()   # gives the day of the week
+        x["day"] = x["MONTH_AND_DATE"].dt.day_name()   # gives the day of the week
         result = x.groupby("day")["PRICE_x"].mean()     # groups daily income by weekday
         result = result.sort_values(ascending=False)    # returns it in descending order
         result = result.rename("Average income by day")
         return result
 
-def holiday_earnings(x, holidays):
+def holiday_earnings(x):
         """
         holiday_earnings takes the holiday calendar we defined earlier and examines earnings on holidays
         """
+        holidays = create_calendar(x)
         x = x.copy()
         x["is_holiday"] = x["MONTH_AND_DATE"].isin(holidays)  # flags holidays
         result1 = x.groupby("is_holiday")["PRICE_x"].sum()      # this is for the aggregated income on either holidays or non-holidays
