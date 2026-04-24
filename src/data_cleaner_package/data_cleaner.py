@@ -1,5 +1,4 @@
 import pandas as pd  # pyright: ignore[reportMissingModuleSource]
-from mypackage import *  # imports BASE_DIR and excel_checker
 
 
 def table_merger(df):

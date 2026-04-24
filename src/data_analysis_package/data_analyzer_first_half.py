@@ -1,6 +1,5 @@
 import pandas as pd  # pyright: ignore[reportMissingModuleSource]
 from pandas.tseries.holiday import USFederalHolidayCalendar  # pyright: ignore[reportMissingModuleSource]
-from mypackage import *  # imports BASE_DIR and excel_checker
 
 
 def create_calendar(df):
@@ -114,11 +113,6 @@ def holiday_earnings(df):
     result2 = result2.rename("Average earnings on either holiday or non-holiday")
 
     return result1, result2
-
-
-# -------------------- DATA PATH --------------------
-# Define path to the cleaned dataset
-path = BASE_DIR / "data" / "cleaned_data.xlsx"
 
 
 # -------------------- EXECUTION BLOCK --------------------

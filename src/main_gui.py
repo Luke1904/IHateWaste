@@ -1,7 +1,7 @@
-from data_cleaner import table_merger, null_deleter, duplicate_deleter
-from data_analyzer_first_half import weekday_income, holiday_earnings
-from data_analyzer_second_half import most_popular_dishes, volume_of_dishes, dish_volume_by_day
-from mypackage import excel_checker
+from data_cleaner_package.data_cleaner import table_merger, null_deleter, duplicate_deleter
+from data_analysis_package.data_analyzer_first_half import weekday_income, holiday_earnings
+from data_analysis_package.data_analyzer_second_half import most_popular_dishes, volume_of_dishes, dish_volume_by_day
+from regex_package.regex_exception_handeling import excel_checker
 import tkinter as tk
 import pandas as pd # pyright: ignore[reportMissingModuleSource]
 from tkinter import filedialog, ttk
