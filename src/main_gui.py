@@ -75,7 +75,7 @@ tk.Button(picker, text="Browse", command=browse,
           relief="flat", font=("Courier New", 9, "bold"),
           cursor="hand2", padx=10).pack(side="left", padx=4)
 
-# ── Body: sidebar + results ───────────────────────────
+# Sidebar
 body = tk.Frame(root, bg=BG)
 body.pack(fill="both", expand=True)
 
@@ -237,6 +237,7 @@ make_btn("6. Dish Volume by Day",     run_dish_volume_by_day,ACCENT2).pack(fill=
 def on_close():
     plt.close("all")
     root.destroy()
+
 
 root.protocol("WM_DELETE_WINDOW", on_close)
 root.mainloop()
