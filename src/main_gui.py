@@ -1,6 +1,7 @@
 from data_cleaner import table_merger, null_deleter, duplicate_deleter
 from data_analyzer_first_half import weekday_income, holiday_earnings
 from data_analyzer_second_half import most_popular_dishes, volume_of_dishes, dish_volume_by_day
+from mypackage import excel_checker
 import tkinter as tk
 import pandas as pd
 from tkinter import filedialog, ttk
@@ -149,6 +150,11 @@ def run_clean():
     path = file_path.get()
     if not path:
         status.set("Please select a file first!")
+        return
+    try:    # This is to make sure that the file selected is an excel, even though the program only lets you input .xlsx anyway
+        excel_checker(path)
+    except ValueError:
+        status.set("Error: Please select an Excel (.xlsx) file!")
         return
     df = pd.read_excel(path, sheet_name=None)
     df = table_merger(df)
