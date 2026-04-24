@@ -1,45 +1,132 @@
-import pandas as pd # type: ignore
-import re
-from pandas.tseries.holiday import USFederalHolidayCalendar     # type: ignore # for use in accounting for holidays
-from mypackage import *
+import pandas as pd # pyright: ignore[reportMissingModuleSource]
+from pandas.tseries.holiday import USFederalHolidayCalendar # pyright: ignore[reportMissingModuleSource]
+from mypackage import *  # imports BASE_DIR and excel_checker
+
 
 def create_calendar(df):
-        """
-        Creating the calendar for holidays. It is necessary to include a start and end date to this calendar.
-        """
-        start = df["MONTH_AND_DATE"].min()
-        end = df["MONTH_AND_DATE"].max()
-        cal = USFederalHolidayCalendar()
-        holidays = cal.holidays(start=start, end=end)
-        return holidays
+    """
+    Create a calendar of US federal holidays within the date range of the dataset.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame containing a datetime column 'MONTH_AND_DATE'.
+
+    Returns
+    -------
+    pandas.DatetimeIndex
+        A list-like structure of holiday dates between the minimum and maximum
+        dates present in the dataset.
+    """
+
+    # Determine the time span of the dataset
+    start = df["MONTH_AND_DATE"].min()
+    end = df["MONTH_AND_DATE"].max()
+
+    # Initialize holiday calendar
+    cal = USFederalHolidayCalendar()
+
+    # Generate holidays within the date range
+    holidays = cal.holidays(start=start, end=end)
+
+    return holidays
+
 
 def weekday_income(df):
-        """
-        weekday_income takes the dataframe and outputs the average money made in each weekday in descending order
-         """
-        df_1 = df.copy()
-        df_1["MONTH_AND_DATE"] = pd.to_datetime(df["MONTH_AND_DATE"])       # makes sure that the inserted date column is datetime
-        df_1["day"] = df_1["MONTH_AND_DATE"].dt.day_name()   # gives the day of the week
-        result = df_1.groupby("day")["PRICE_x"].mean()     # groups daily income by weekday
-        result = result.sort_values(ascending=False)    # returns it in descending order
-        result = result.rename("Average income by day")
-        return result
+    """
+    Compute the average income per weekday.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame containing:
+        - 'MONTH_AND_DATE' (date column)
+        - 'PRICE_x' (numeric column representing earnings)
+
+    Returns
+    -------
+    pandas.Series
+        Series indexed by weekday name, containing average income,
+        sorted in descending order.
+    """
+
+    # Create a copy to avoid modifying the original DataFrame
+    df_1 = df.copy()
+
+    # Ensure date column is in datetime format
+    df_1["MONTH_AND_DATE"] = pd.to_datetime(df_1["MONTH_AND_DATE"])
+
+    # Extract weekday names (Monday, Tuesday, etc.)
+    df_1["day"] = df_1["MONTH_AND_DATE"].dt.day_name()
+
+    # Compute average income per weekday
+    result = df_1.groupby("day")["PRICE_x"].mean()
+
+    # Sort results in descending order
+    result = result.sort_values(ascending=False)
+
+    # Assign a descriptive name to the Series
+    result = result.rename("Average income by day")
+
+    return result
+
 
 def holiday_earnings(df):
-        """
-        holiday_earnings takes the holiday calendar we defined earlier and examines earnings on holidays
-        """
-        holidays = create_calendar(df)
-        df_2 = df.copy()
-        df_2["is_holiday"] = df_2["MONTH_AND_DATE"].isin(holidays)  # flags holidays
-        result1 = df_2.groupby("is_holiday")["PRICE_x"].sum()      # this is for the aggregated income on either holidays or non-holidays
-        result1 = result1.sort_values(ascending=False)
-        result1 = result1.rename("Holiday vs non-holiday earnings")
-        result2 = df_2.groupby("is_holiday")["PRICE_x"].mean()     # this is for the average income on either holidays or non-holidays
-        result2 = result2.sort_values(ascending=False)
-        result2 = result2.rename("Average earnings on either holiday or non-holiday")
-        return result1, result2
+    """
+    Compute total and average earnings for holidays vs non-holidays.
 
-path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
-excel_checker(path)     # calls function from package to check if the path is of the right file type
-df = pd.read_excel(path)
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame containing:
+        - 'MONTH_AND_DATE' (date column)
+        - 'PRICE_x' (numeric earnings column)
+
+    Returns
+    -------
+    tuple[pandas.Series, pandas.Series]
+        - First Series: total earnings for holiday vs non-holiday
+        - Second Series: average earnings for holiday vs non-holiday
+    """
+
+    # Generate holiday calendar based on dataset dates
+    holidays = create_calendar(df)
+
+    # Create a copy to avoid modifying original data
+    df_2 = df.copy()
+
+    # Flag rows that correspond to holidays
+    df_2["is_holiday"] = df_2["MONTH_AND_DATE"].isin(holidays)
+
+    # Compute total earnings for holiday vs non-holiday
+    result1 = df_2.groupby("is_holiday")["PRICE_x"].sum()
+    result1 = result1.sort_values(ascending=False)
+    result1 = result1.rename("Holiday vs non-holiday earnings")
+
+    # Compute average earnings for holiday vs non-holiday
+    result2 = df_2.groupby("is_holiday")["PRICE_x"].mean()
+    result2 = result2.sort_values(ascending=False)
+    result2 = result2.rename("Average earnings on either holiday or non-holiday")
+
+    return result1, result2
+
+
+# -------------------- DATA LOADING --------------------
+
+# Construct path to cleaned dataset
+path = BASE_DIR / "data" / "cleaned_data.xlsx"
+
+if __name__ == "__main__":
+    # Load the cleaned dataset from the specified Excel file
+    # (assumes 'path' has already been defined correctly)
+    df = pd.read_excel(path)
+
+    # Compute and display the average income for each weekday
+    # This uses the weekday_income function defined earlier
+    print(weekday_income(df))
+
+    # Compute and display both:
+    # 1. Total earnings on holidays vs non-holidays
+    # 2. Average earnings on holidays vs non-holidays
+    # The function returns a tuple of two Series, which are printed here
+    print(holiday_earnings(df))

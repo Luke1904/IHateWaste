@@ -1,40 +1,81 @@
-import pandas as pd # type: ignore
-from mypackage import *
+import pandas as pd # pyright: ignore[reportMissingModuleSource]
+from mypackage import *  # imports BASE_DIR and excel_checker from your package
+
 
 def table_merger(df):
+    """
+    Merge multiple sheets from the Excel file into a single DataFrame.
 
-    df_orders = df["orders"] # Order ID
-    df_makesuse = df["makes_use"] #Dish ID and ID
-    df_ingredients = df["ingredients"] #ID
-    df_dishes = df["dishes"] #Dish ID
-    df_consist_of = df["consist_of"] #Dish ID and Order ID
+    Parameters
+    ----------
+    df : dict[str, pandas.DataFrame]
+        Dictionary of DataFrames returned by pd.read_excel(..., sheet_name=None),
+        where keys are sheet names.
 
+    Returns
+    -------
+    pandas.DataFrame
+        A merged DataFrame combining relevant information from all sheets.
+    """
+
+    # Extract individual sheets from the dictionary
+    df_orders = df["orders"]          # Contains ORDERID and order-level data
+    df_makesuse = df["makes_use"]     # Links dishes to ingredients (DISHID ↔ ID)
+    df_ingredients = df["ingredients"]  # Contains ingredient IDs
+    df_dishes = df["dishes"]          # Contains dish information (DISHID)
+    df_consist_of = df["consist_of"]  # Links orders to dishes (ORDERID ↔ DISHID)
+
+    # Perform successive merges to combine all relevant tables
     df = pd.merge(df_orders, df_consist_of, on="ORDERID")
     df = pd.merge(df, df_dishes, on="DISHID")
     df = pd.merge(df, df_makesuse, on="DISHID")
     df = pd.merge(df, df_ingredients, on="ID")
 
+    # Drop columns that are not needed for further analysis
     df = df.drop(["CUSTOMERID", "WAITERID", "TIP"], axis=1)
-    
+
     return df
 
+
 def null_deleter(x):
-    if not isinstance(x, (pd.DataFrame)):
+    """
+    Remove rows containing null values from a DataFrame.
+
+    Parameters
+    ----------
+    x : pandas.DataFrame
+
+    Returns
+    -------
+    pandas.DataFrame
+        DataFrame with all rows containing NaN values removed.
+    """
+
+    # Ensure the input is a DataFrame
+    if not isinstance(x, pd.DataFrame):
         raise TypeError("Need pandas dataframe")
+
+    # Drop rows with any missing values
     return x.dropna()
 
+
 def duplicate_deleter(x):
-    if not isinstance(x, (pd.DataFrame)):
+    """
+    Remove duplicate rows from a DataFrame.
+
+    Parameters
+    ----------
+    x : pandas.DataFrame
+
+    Returns
+    -------
+    pandas.DataFrame
+        DataFrame with duplicate rows removed.
+    """
+
+    # Ensure the input is a DataFrame
+    if not isinstance(x, pd.DataFrame):
         raise TypeError("Need pandas dataframe")
+
+    # Drop duplicate rows
     return x.drop_duplicates()
-
-def load_data():
-    path = BASE_DIR / "data" / "github_inventory_unfilltered.xlsx"
-    excel_checker(path)
-    return pd.read_excel(path, sheet_name=None)
-
-df1 = load_data()
-df1 = table_merger(df1)
-df1 = null_deleter(df1)
-df1 = duplicate_deleter(df1)
-df1.to_excel(BASE_DIR / "data" / "cleaned_data.xlsx", index=False)
