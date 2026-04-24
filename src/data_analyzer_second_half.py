@@ -81,7 +81,6 @@ def dish_volume_by_day(data_frame1):
     data_frame_dish_by_day = data_frame_dish_by_day.rename("Dish volume by day")
     return data_frame_dish_by_day
 
-def run_code():
-    path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
-    excel_checker(path)     # calls function from package to check if the path is of the right file type
-    data_frame1 = pd.read_excel(path)       # Load the dataset into a DataFrame
+path = BASE_DIR/"data"/"cleaned_data.xlsx"      # imports defined object from mypackage
+excel_checker(path)     # calls function from package to check if the path is of the right file type
+data_frame1 = pd.read_excel(path)       # Load the dataset into a DataFrame
