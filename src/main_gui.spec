@@ -3,10 +3,10 @@
 
 a = Analysis(
     ['main_gui.py'],
-    pathex=[],
+    pathex=['.'],
     binaries=[],
     datas=[],
-    hiddenimports=[],
+    hiddenimports=['mypackage'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
