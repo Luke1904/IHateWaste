@@ -132,26 +132,3 @@ def dish_volume_by_day(data_frame1):
     data_frame_dish_by_day = data_frame_dish_by_day.rename("Dish volume by day")
 
     return data_frame_dish_by_day
-
-
-# -------------------- DATA LOADING --------------------
-
-# Construct path to cleaned dataset
-path = BASE_DIR / "data" / "cleaned_data.xlsx"
-
-# Validate that the file is an Excel file
-excel_checker(path)
-
-# Load dataset into a DataFrame
-data_frame1 = pd.read_excel(path)
-
-if __name__ == "__main__":
-    # Display the most frequently ordered dishes (sorted by count)
-    print(most_popular_dishes(data_frame1))
-
-    # Display the number of dishes ordered per day of the week
-    print(volume_of_dishes(data_frame1))
-
-    # Display the average number of orders per dish for each weekday
-    # (returns a Series with a MultiIndex: dish + day)
-    print(dish_volume_by_day(data_frame1))
