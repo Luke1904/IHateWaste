@@ -3,10 +3,10 @@ from data_analyzer_first_half import weekday_income, holiday_earnings
 from data_analyzer_second_half import most_popular_dishes, volume_of_dishes, dish_volume_by_day
 from mypackage import excel_checker
 import tkinter as tk
-import pandas as pd
+import pandas as pd # pyright: ignore[reportMissingModuleSource]
 from tkinter import filedialog, ttk
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt # pyright: ignore[reportMissingModuleSource]
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg # pyright: ignore[reportMissingModuleSource]
 
 
 # Colour palette

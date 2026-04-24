@@ -111,8 +111,6 @@ def holiday_earnings(df):
     return result1, result2
 
 
-# -------------------- DATA LOADING --------------------
-
 # Construct path to cleaned dataset
 path = BASE_DIR / "data" / "cleaned_data.xlsx"
 
