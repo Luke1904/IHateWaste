@@ -42,7 +42,7 @@ python -m PyInstaller --onefile --windowed main_gui.py
 
 
 
-## Instructions
+## Instructions for Use
 
 #### 1.) After the executable, you will now be given the option to browse and pick which file you intend to use for the program.
  *PLEASE NOTE FOR THE PROGRAM TO WORK YOU MUST USE AN EXCEL FILE*
@@ -51,7 +51,7 @@ python -m PyInstaller --onefile --windowed main_gui.py
 
 #### 3.) With the clean data you will now have the option of 5 choices to better help analyse your data to find trends and promote the best possible outcome for your business
 
-## How to operate sphinx
+## How to Operate Sphinx
 
 **PLEASE NOTE THAT A FIREFOX BROWSER MUST BE DOWNLOADED ONTO YOUR SYSTEM FOR THESE STEPS TO WORK**
 
