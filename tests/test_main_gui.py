@@ -2,59 +2,77 @@ import sys
 from pathlib import Path
 import pandas as pd # pyright: ignore[reportMissingModuleSource]
 import pytest # pyright: ignore[reportMissingImports]
+from unittest.mock import patch
 
-# Add src path
+# Add src to path
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR / "src"))
 
-# Import logic functions (not GUI widgets)
-from data_cleaner import table_merger, null_deleter, duplicate_deleter # pyright: ignore[reportMissingImports]
-from data_analyzer_first_half import weekday_income, holiday_earnings # pyright: ignore[reportMissingImports]
-from data_analyzer_second_half import most_popular_dishes, volume_of_dishes, dish_volume_by_day # pyright: ignore[reportMissingImports]
+# Import only logic functions (NOT GUI)
+from data_cleaner_package.data_cleaner import table_merger, null_deleter, duplicate_deleter # pyright: ignore[reportMissingImports]
+from data_analysis_package.data_analyzer_first_half import weekday_income, holiday_earnings # pyright: ignore[reportMissingImports]
+from data_analysis_package.data_analyzer_second_half import most_popular_dishes, volume_of_dishes, dish_volume_by_day # pyright: ignore[reportMissingImports]
 
 
 # -------------------- FIXTURE --------------------
 @pytest.fixture
-def sample_df():
+def mock_sheets():
     """
-    Small test DataFrame for analysis functions.
+    Mock Excel sheet structure used by run_clean().
     """
-    return pd.DataFrame({
-        "NAME_x": ["Pizza", "Burger", "Pizza"],
-        "MONTH_AND_DATE": pd.to_datetime([
-            "2024-01-01", "2024-01-02", "2024-01-03"
-        ]),
-        "PRICE_x": [100, 200, 150],
-        "ORDERID": [1, 2, 3]
-    })
+    return {
+        "orders": pd.DataFrame({
+            "ORDERID": [1],
+            "CUSTOMERID": [10],
+            "WAITERID": [100],
+            "TIP": [1.5]
+        }),
+        "consist_of": pd.DataFrame({
+            "ORDERID": [1],
+            "DISHID": [10]
+        }),
+        "dishes": pd.DataFrame({
+            "DISHID": [10],
+            "NAME_x": ["Pizza"]
+        }),
+        "makes_use": pd.DataFrame({
+            "DISHID": [10],
+            "ID": [100]
+        }),
+        "ingredients": pd.DataFrame({
+            "ID": [100]
+        })
+    }
 
 
-# -------------------- TESTS --------------------
+# -------------------- TEST --------------------
 
-def test_weekday_income(sample_df):
-    result = weekday_income(sample_df)
-    assert isinstance(result, pd.Series)
-    assert len(result) > 0
+def test_clean_pipeline(mock_sheets):
+    """
+    Test full cleaning pipeline logic.
+    """
+    df = table_merger(mock_sheets)
+    df = null_deleter(df)
+    df = duplicate_deleter(df)
 
-
-def test_holiday_earnings(sample_df):
-    result1, result2 = holiday_earnings(sample_df)
-    assert isinstance(result1, pd.Series)
-    assert isinstance(result2, pd.Series)
-
-
-def test_most_popular_dishes(sample_df):
-    result = most_popular_dishes(sample_df)
-    assert isinstance(result, pd.DataFrame)
-    assert "count" in result.columns
+    assert isinstance(df, pd.DataFrame)
+    assert df.isnull().sum().sum() == 0
+    assert df.duplicated().sum() == 0
 
 
-def test_volume_of_dishes(sample_df):
-    result = volume_of_dishes(sample_df)
-    assert isinstance(result, pd.DataFrame)
-    assert "count" in result.columns
+@patch("pandas.read_excel")
+def test_run_clean_logic(mock_read_excel, mock_sheets):
+    """
+    Mock file loading to test run_clean without GUI interaction.
+    """
+    mock_read_excel.return_value = mock_sheets
 
+    from main_gui import run_clean, cleaned_df # pyright: ignore[reportMissingImports]
 
-def test_dish_volume_by_day(sample_df):
-    result = dish_volume_by_day(sample_df)
-    assert isinstance(result, pd.Series)
+    # simulate selected file
+    from main_gui import file_path # pyright: ignore[reportMissingImports]
+    file_path.set("dummy.xlsx")
+
+    run_clean()
+
+    assert cleaned_df is not None

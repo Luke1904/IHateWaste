@@ -6,7 +6,7 @@ import pytest # pyright: ignore[reportMissingImports]
 # -------------------- PATH SETUP --------------------
 # Add the 'src' directory to Python path so that project modules can be imported
 BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(BASE_DIR / "src"))
+sys.path.insert(0, str(BASE_DIR/"src"/"data_analysis_package"))
 
 # Import only required functions (avoid wildcard imports)
 from data_analyzer_first_half import create_calendar, weekday_income, holiday_earnings # pyright: ignore[reportMissingImports]
