@@ -82,3 +82,52 @@ Displays a table with three columns, titled: name item, day of the week and item
 - Restaurant owners seeking to better understand their inventory and how it is used in each respective dish
 
 - E-commerce, by using the program to better understand customer analytics
+
+## Project Tree
+
+```Python
+.
+├── README.md
+├── data
+│   ├── cleaned_data.xlsx
+│   ├── github_inventory.xlsx:Zone.Identifier
+│   └── github_inventory_unfilltered.xlsx
+├── docs
+│   ├── Makefile
+│   ├── make.bat
+│   └── source
+│       ├── conf.py
+│       ├── data_analyzer_first_half.rst
+│       ├── data_analyzer_second_half.rst
+│       ├── data_cleaner.rst
+│       └── index.rst
+├── environment.yml
+├── src
+│   ├── banner.py
+│   ├── data_analysis_package
+│   │   ├── init.py
+│   │   ├── pycache
+│   │   │   ├── data_analyzer_first_half.cpython-312.pyc
+│   │   │   └── data_analyzer_second_half.cpython-312.pyc
+│   │   ├── data_analyzer_first_half.py
+│   │   └── data_analyzer_second_half.py
+│   ├── data_cleaner_package
+│   │   ├── init.py
+│   │   ├── pycache
+│   │   │   └── data_cleaner.cpython-312.pyc
+│   │   └── data_cleaner.py
+│   ├── main_gui.py
+│   └── regex_package
+│       ├── init.py
+│       ├── pycache
+│       │   └── regex_exception_handeling.cpython-312.pyc
+│       └── regex_exception_handeling.py
+├── tests
+│   ├── test_data_analyzer_first_half.py
+│   ├── test_data_analyzer_second_half.py
+│   ├── test_data_cleaner.py
+│   ├── test_main_gui.py
+│   └── test_regex_package.py
+└── version.txt
+
+```
