@@ -53,26 +53,28 @@ python -m PyInstaller --onefile --windowed main_gui.py
 
 ## How to operate sphinx
 
-#### Open terminal and run this command
+**PLEASE NOTE THAT A FIREFOX BROWSER MUST BE DOWNLOADED ONTO YOUR SYSTEM FOR THESE STEPS TO WORK**
+
+#### 1.) Open terminal and run this command
 
 ```Python
 cd docs/
 ```
 
-#### Run this command in the terminal
+#### 2.) Run this command in the terminal
 
 ```Python
 make html
 ```
 
-#### After creating the html file, close the pop-up window and run these commands in terminal
+#### 3.) After creating the html file, close the pop-up window and run these commands in terminal
 
 ```Python
 cd build/html
 firefox index.html
 ```
 
-#### Now you will be directed to a firefox window with the sphinx documentation of the project
+#### You will now be directed to a firefox window with the sphinx documentation of the project
 
 ## UI Features
 
