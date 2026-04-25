@@ -50,6 +50,30 @@ python -m PyInstaller --onefile --windowed main_gui.py
 #### 2.) After selecting desired files, click the option to clean the data or else the other features of the program will not become available
 
 #### 3.) With the clean data you will now have the option of 5 choices to better help analyse your data to find trends and promote the best possible outcome for your business
+
+## How to operate sphinx
+
+#### Open terminal and run this command
+
+```Python
+cd docs/
+```
+
+#### Run this command in the terminal
+
+```Python
+make html
+```
+
+#### After creating the html file, close the pop-up window and run these commands in terminal
+
+```Python
+cd build/html
+firefox index.html
+```
+
+#### Now you will be directed to a firefox window with the sphinx documentation of the project
+
 ## UI Features
 
 #### 1.) Data Cleaning:
