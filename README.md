@@ -45,7 +45,7 @@ python -m PyInstaller --onefile --windowed main_gui.py
 
 ## Instructions for Use
 
-#### 1.) After the executable, you will now be given the option to browse and pick which file you intend to use for the program.
+#### 1.) After the executable, you will now be given the option to browse and pick which file you intend to use for the program. (We have an example dataset located in data/ named "github_inventory_unfiltered")
  *PLEASE NOTE FOR THE PROGRAM TO WORK YOU MUST USE AN EXCEL FILE*
 
 #### 2.) After selecting desired files, click the option to clean the data or else the other features of the program will not become available
