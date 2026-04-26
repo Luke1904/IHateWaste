@@ -54,7 +54,9 @@ python -m PyInstaller --onefile --windowed main_gui.py
 
 ## How to Operate Sphinx
 
-**PLEASE NOTE THAT A FIREFOX BROWSER MUST BE DOWNLOADED ONTO YOUR SYSTEM FOR THESE STEPS TO WORK**
+**PLEASE NOTE THAT A FIREFOX BROWSER MUST BE DOWNLOADED ONTO YOUR SYSTEM FOR THESE STEPS TO WORK.**
+**Note:** `make` is required to build the documentation. Install it with:
+sudo apt install make
 
 #### 1.) Open terminal and run this command
 
