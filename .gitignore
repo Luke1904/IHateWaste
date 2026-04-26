@@ -1,0 +1,32 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Optional: pytest cache
+.pytest_cache/
+
+# Optional: compiled files
+*.so
+
+# Sphinx generated docs
+docs/build/
+
+# Conda
+*.egg-info/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# WSL
+*.Zone.Identifier
+
+# PyInstaller
+dist/
+build/
+*.spec
