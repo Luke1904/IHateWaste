@@ -27,7 +27,7 @@ conda activate your-env-name
 
 ## How to Run the Program
 
-#### 1.) Make sure you have python installed on your local system. After this, to install necessary dependcies run this command:
+#### 1.) Make sure you have python installed on your local system. After this, to install necessary dependencies run this command:
 ### pip install pandas matplotlib openpyxl pyfiglet pyinstaller
 #### 2.) Navigate to src/
 #### 3.)Run the following command in windows powershell:
