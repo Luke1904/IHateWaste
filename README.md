@@ -42,7 +42,7 @@ python -m PyInstaller --onefile --windowed main_gui.py
 
 
 
-## Instructions
+## Instructions for Use
 
 #### 1.) After the executable, you will now be given the option to browse and pick which file you intend to use for the program.
  *PLEASE NOTE FOR THE PROGRAM TO WORK YOU MUST USE AN EXCEL FILE*
@@ -51,28 +51,30 @@ python -m PyInstaller --onefile --windowed main_gui.py
 
 #### 3.) With the clean data you will now have the option of 5 choices to better help analyse your data to find trends and promote the best possible outcome for your business
 
-## How to operate sphinx
+## How to Operate Sphinx
 
-#### Open terminal and run this command
+**PLEASE NOTE THAT A FIREFOX BROWSER MUST BE DOWNLOADED ONTO YOUR SYSTEM FOR THESE STEPS TO WORK**
+
+#### 1.) Open terminal and run this command
 
 ```Python
 cd docs/
 ```
 
-#### Run this command in the terminal
+#### 2.) Run this command in the terminal
 
 ```Python
 make html
 ```
 
-#### After creating the html file, close the pop-up window and run these commands in terminal
+#### 3.) After creating the html file, close the pop-up window and run these commands in terminal
 
 ```Python
 cd build/html
 firefox index.html
 ```
 
-#### Now you will be directed to a firefox window with the sphinx documentation of the project
+#### You will now be directed to a firefox window with the sphinx documentation of the project
 
 ## UI Features
 
