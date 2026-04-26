@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>main_gui &mdash; Restaurant Inventory Analyzer 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=56c4699f" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Restaurant Inventory Analyzer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data_cleaner.html">Data Cleaner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data_cleaner.html#data-cleaner-py">data_cleaner.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_cleaner.html#data_cleaner_package.data_cleaner.table_merger"><code class="docutils literal notranslate"><span class="pre">table_merger()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_cleaner.html#data_cleaner_package.data_cleaner.null_deleter"><code class="docutils literal notranslate"><span class="pre">null_deleter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_cleaner.html#data_cleaner_package.data_cleaner.duplicate_deleter"><code class="docutils literal notranslate"><span class="pre">duplicate_deleter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_analyzer_first_half.html">Data Analyzer (First Half)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_first_half.html#data-analyzer-first-half-py">data_analyzer_first_half.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.create_calendar"><code class="docutils literal notranslate"><span class="pre">create_calendar()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.weekday_income"><code class="docutils literal notranslate"><span class="pre">weekday_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.holiday_earnings"><code class="docutils literal notranslate"><span class="pre">holiday_earnings()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_analyzer_second_half.html">Data Analyzer (Second Half)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_second_half.html#data-analyzer-second-half-py">data_analyzer_second_half.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_second_half.html#data_analysis_package.data_analyzer_second_half.most_popular_dishes"><code class="docutils literal notranslate"><span class="pre">most_popular_dishes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_second_half.html#data_analysis_package.data_analyzer_second_half.volume_of_dishes"><code class="docutils literal notranslate"><span class="pre">volume_of_dishes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_analyzer_second_half.html#data_analysis_package.data_analyzer_second_half.dish_volume_by_day"><code class="docutils literal notranslate"><span class="pre">dish_volume_by_day()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Restaurant Inventory Analyzer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">main_gui</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for main_gui</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">main_gui.py</span>
+<span class="sd">-----------</span>
+<span class="sd">Entry point for the Restaurant Inventory Analyzer desktop application.</span>
+<span class="sd">Provides a Tkinter-based GUI that allows the user to:</span>
+<span class="sd">    1. Load and clean a raw Excel inventory file</span>
+<span class="sd">    2. Run various analyses on the cleaned data</span>
+<span class="sd">    3. Display results as interactive charts or scrollable tables</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">data_cleaner_package.data_cleaner</span><span class="w"> </span><span class="kn">import</span> <span class="n">table_merger</span><span class="p">,</span> <span class="n">null_deleter</span><span class="p">,</span> <span class="n">duplicate_deleter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">data_analysis_package.data_analyzer_first_half</span><span class="w"> </span><span class="kn">import</span> <span class="n">weekday_income</span><span class="p">,</span> <span class="n">holiday_earnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">data_analysis_package.data_analyzer_second_half</span><span class="w"> </span><span class="kn">import</span> <span class="n">most_popular_dishes</span><span class="p">,</span> <span class="n">volume_of_dishes</span><span class="p">,</span> <span class="n">dish_volume_by_day</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">regex_package.regex_exception_handeling</span><span class="w"> </span><span class="kn">import</span> <span class="n">excel_checker</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="kn">import</span> <span class="n">filedialog</span><span class="p">,</span> <span class="n">ttk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.backends.backend_tkagg</span><span class="w"> </span><span class="kn">import</span> <span class="n">FigureCanvasTkAgg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+
+
+<span class="c1"># ── Colour palette ────────────────────────────────────────────────────────────</span>
+<span class="c1"># All colours are defined here so they can be changed in one place</span>
+<span class="n">BG</span>        <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#1a1a2e&quot;</span>   <span class="c1"># main window background</span>
+<span class="n">PANEL</span>     <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#16213e&quot;</span>   <span class="c1"># sidebar and bar backgrounds</span>
+<span class="n">ACCENT</span>    <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#e94560&quot;</span>   <span class="c1"># primary accent (header, titles, clean button)</span>
+<span class="n">ACCENT2</span>   <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#0f3460&quot;</span>   <span class="c1"># secondary accent (analysis buttons, entry fields)</span>
+<span class="n">TEXT</span>      <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#eaeaea&quot;</span>   <span class="c1"># primary text colour</span>
+<span class="n">SUBTEXT</span>   <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#a0a0b0&quot;</span>   <span class="c1"># muted text (labels, section headers)</span>
+<span class="n">SUCCESS</span>   <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#2ecc71&quot;</span>   <span class="c1"># status bar text colour</span>
+<span class="n">WARNING</span>   <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#f39c12&quot;</span>   <span class="c1"># reserved for warning messages</span>
+<span class="n">BTN_ACTIVE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#c73652&quot;</span>   <span class="c1"># button colour on hover/click</span>
+
+<span class="c1"># Colours assigned to bars in charts — cycles through this list</span>
+<span class="n">CHART_COLORS</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#e94560&quot;</span><span class="p">,</span><span class="s2">&quot;#f39c12&quot;</span><span class="p">,</span><span class="s2">&quot;#2ecc71&quot;</span><span class="p">,</span><span class="s2">&quot;#3498db&quot;</span><span class="p">,</span><span class="s2">&quot;#9b59b6&quot;</span><span class="p">,</span><span class="s2">&quot;#1abc9c&quot;</span><span class="p">,</span><span class="s2">&quot;#e67e22&quot;</span><span class="p">]</span>
+
+<span class="c1"># ── Matplotlib global styling ─────────────────────────────────────────────────</span>
+<span class="c1"># Applied to all charts so they match the dark theme of the app</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+    <span class="s2">&quot;figure.facecolor&quot;</span><span class="p">:</span>  <span class="n">BG</span><span class="p">,</span>      <span class="c1"># chart background</span>
+    <span class="s2">&quot;axes.facecolor&quot;</span><span class="p">:</span>    <span class="n">PANEL</span><span class="p">,</span>   <span class="c1"># plot area background</span>
+    <span class="s2">&quot;axes.edgecolor&quot;</span><span class="p">:</span>    <span class="n">ACCENT2</span><span class="p">,</span> <span class="c1"># axis border colour</span>
+    <span class="s2">&quot;axes.labelcolor&quot;</span><span class="p">:</span>   <span class="n">TEXT</span><span class="p">,</span>    <span class="c1"># axis label colour</span>
+    <span class="s2">&quot;xtick.color&quot;</span><span class="p">:</span>       <span class="n">SUBTEXT</span><span class="p">,</span> <span class="c1"># x-axis tick colour</span>
+    <span class="s2">&quot;ytick.color&quot;</span><span class="p">:</span>       <span class="n">SUBTEXT</span><span class="p">,</span> <span class="c1"># y-axis tick colour</span>
+    <span class="s2">&quot;text.color&quot;</span><span class="p">:</span>        <span class="n">TEXT</span><span class="p">,</span>    <span class="c1"># general text colour</span>
+    <span class="s2">&quot;grid.color&quot;</span><span class="p">:</span>        <span class="n">ACCENT2</span><span class="p">,</span> <span class="c1"># gridline colour</span>
+    <span class="s2">&quot;grid.alpha&quot;</span><span class="p">:</span>        <span class="mf">0.3</span><span class="p">,</span>     <span class="c1"># gridline transparency</span>
+<span class="p">})</span>
+
+<span class="c1"># ── Global state ──────────────────────────────────────────────────────────────</span>
+<span class="c1"># Stores the cleaned DataFrame after the user clicks &quot;Clean Data&quot;</span>
+<span class="c1"># All analysis functions read from this variable</span>
+<span class="n">cleaned_df</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># ── Window setup ──────────────────────────────────────────────────────────────</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Restaurant Analyzer&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;1280x840&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="n">BG</span><span class="p">)</span>
+
+<span class="c1"># ── Status bar ────────────────────────────────────────────────────────────────</span>
+<span class="c1"># Displays feedback messages at the bottom of the window</span>
+<span class="c1"># Packed before the body so it doesn&#39;t get squashed by expand=True</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">StringVar</span><span class="p">()</span>
+<span class="n">status_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">root</span><span class="p">,</span>
+    <span class="n">textvariable</span><span class="o">=</span><span class="n">status</span><span class="p">,</span>
+    <span class="n">bg</span><span class="o">=</span><span class="n">PANEL</span><span class="p">,</span>
+    <span class="n">fg</span><span class="o">=</span><span class="n">SUCCESS</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span>
+    <span class="n">padx</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">status_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Header bar ────────────────────────────────────────────────────────────────</span>
+<span class="n">header</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">ACCENT</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">header</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="n">header</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Restaurant Inventory Analyzer&quot;</span><span class="p">,</span>
+    <span class="n">bg</span><span class="o">=</span><span class="n">ACCENT</span><span class="p">,</span>
+    <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Georgia&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># ── File picker bar ───────────────────────────────────────────────────────────</span>
+<span class="c1"># Allows the user to browse for their Excel file</span>
+<span class="c1"># The selected path is stored in file_path (a Tkinter StringVar)</span>
+<span class="n">picker</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">PANEL</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">picker</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">StringVar</span><span class="p">()</span>  <span class="c1"># holds the path to the user-selected Excel file</span>
+
+<div class="viewcode-block" id="browse">
+<a class="viewcode-back" href="../main_gui.html#main_gui.browse">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">browse</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Open a file dialog filtered to .xlsx files and store the selected path.&quot;&quot;&quot;</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">(</span><span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;Excel files&quot;</span><span class="p">,</span> <span class="s2">&quot;*.xlsx&quot;</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+        <span class="n">file_path</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File selected: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;File:&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">PANEL</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="n">SUBTEXT</span><span class="p">,</span>
+         <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>
+         <span class="n">bg</span><span class="o">=</span><span class="n">ACCENT2</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="n">TEXT</span><span class="p">,</span> <span class="n">insertbackground</span><span class="o">=</span><span class="n">TEXT</span><span class="p">,</span>
+         <span class="n">relief</span><span class="o">=</span><span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ipady</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Browse&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">browse</span><span class="p">,</span>
+          <span class="n">bg</span><span class="o">=</span><span class="n">ACCENT2</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">activebackground</span><span class="o">=</span><span class="n">BTN_ACTIVE</span><span class="p">,</span>
+          <span class="n">relief</span><span class="o">=</span><span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">),</span>
+          <span class="n">cursor</span><span class="o">=</span><span class="s2">&quot;hand2&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># ── Body layout ───────────────────────────────────────────────────────────────</span>
+<span class="c1"># Splits the window into a sidebar (buttons) and a results area (charts/tables)</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">BG</span><span class="p">)</span>
+<span class="n">body</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sidebar</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">PANEL</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">sidebar</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">sidebar</span><span class="o">.</span><span class="n">pack_propagate</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># prevents sidebar from shrinking to fit its contents</span>
+
+<span class="n">results_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">BG</span><span class="p">)</span>
+<span class="n">results_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="make_btn">
+<a class="viewcode-back" href="../main_gui.html#main_gui.make_btn">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_btn</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cmd</span><span class="p">:</span> <span class="nb">callable</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">ACCENT</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a styled sidebar button.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    text  : str      — button label</span>
+<span class="sd">    cmd   : callable — function to call when clicked</span>
+<span class="sd">    color : str      — background hex colour (defaults to ACCENT)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tk.Button</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+        <span class="n">sidebar</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">cmd</span><span class="p">,</span>
+        <span class="n">bg</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+        <span class="n">activebackground</span><span class="o">=</span><span class="n">BTN_ACTIVE</span><span class="p">,</span> <span class="n">activeforeground</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+        <span class="n">relief</span><span class="o">=</span><span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">),</span>
+        <span class="n">cursor</span><span class="o">=</span><span class="s2">&quot;hand2&quot;</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">12</span>
+    <span class="p">)</span></div>
+
+
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">sidebar</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;PIPELINE&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">PANEL</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="n">SUBTEXT</span><span class="p">,</span>
+         <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># ── Display helpers ───────────────────────────────────────────────────────────</span>
+
+<div class="viewcode-block" id="show_chart">
+<a class="viewcode-back" href="../main_gui.html#main_gui.show_chart">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">show_chart</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">x_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">y_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">xlabel</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Render a bar chart inside results_frame.</span>
+<span class="sd">    Clears any previously displayed content before drawing.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df     : pd.DataFrame    — data to plot</span>
+<span class="sd">    x_col  : str             — column name for the x-axis (categories)</span>
+<span class="sd">    y_col  : str             — column name for the y-axis (values)</span>
+<span class="sd">    title  : str             — chart title</span>
+<span class="sd">    xlabel : Optional[str]   — optional x-axis label (defaults to x_col)</span>
+<span class="sd">    ylabel : Optional[str]   — optional y-axis label (defaults to y_col)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">results_frame</span><span class="o">.</span><span class="n">winfo_children</span><span class="p">():</span>
+        <span class="n">w</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">colors</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">CHART_COLORS</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]</span>  <span class="c1"># assign one colour per bar</span>
+
+    <span class="n">bars</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">x_col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="n">y_col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">BG</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.1f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">TEXT</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># value labels on bars</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ACCENT</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span> <span class="k">if</span> <span class="n">xlabel</span> <span class="k">else</span> <span class="n">x_col</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span> <span class="k">if</span> <span class="n">ylabel</span> <span class="k">else</span> <span class="n">y_col</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">():</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">set_horizontalalignment</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="c1"># Embed the matplotlib figure into the Tkinter window</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">results_frame</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="show_table">
+<a class="viewcode-back" href="../main_gui.html#main_gui.show_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">show_table</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Render a scrollable table inside results_frame using ttk.Treeview.</span>
+<span class="sd">    Clears any previously displayed content before drawing.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame — data to display as a table</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">results_frame</span><span class="o">.</span><span class="n">winfo_children</span><span class="p">():</span>
+        <span class="n">w</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+
+    <span class="c1"># Apply dark styling to the Treeview widget</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Style</span><span class="p">()</span>
+    <span class="n">style</span><span class="o">.</span><span class="n">theme_use</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+    <span class="n">style</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;Dark.Treeview&quot;</span><span class="p">,</span>
+                    <span class="n">background</span><span class="o">=</span><span class="n">PANEL</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="n">TEXT</span><span class="p">,</span>
+                    <span class="n">rowheight</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">fieldbackground</span><span class="o">=</span><span class="n">PANEL</span><span class="p">)</span>
+    <span class="n">style</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;Dark.Treeview.Heading&quot;</span><span class="p">,</span>
+                    <span class="n">background</span><span class="o">=</span><span class="n">ACCENT2</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="n">TEXT</span><span class="p">,</span>
+                    <span class="n">relief</span><span class="o">=</span><span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">))</span>
+    <span class="n">style</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Dark.Treeview&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;selected&quot;</span><span class="p">,</span> <span class="n">ACCENT</span><span class="p">)])</span>
+
+    <span class="n">cols</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Treeview</span><span class="p">(</span><span class="n">results_frame</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="s2">&quot;headings&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;Dark.Treeview&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+        <span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">160</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">row</span>
+        <span class="p">])</span>
+
+    <span class="c1"># Vertical scrollbar</span>
+    <span class="n">vsb</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Scrollbar</span><span class="p">(</span><span class="n">results_frame</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">tree</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">yscrollcommand</span><span class="o">=</span><span class="n">vsb</span><span class="o">.</span><span class="n">set</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vsb</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># ── Pipeline functions ────────────────────────────────────────────────────────</span>
+
+<div class="viewcode-block" id="run_clean">
+<a class="viewcode-back" href="../main_gui.html#main_gui.run_clean">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_clean</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read the selected Excel file, run the full cleaning pipeline,</span>
+<span class="sd">    and display the cleaned DataFrame as a table.</span>
+<span class="sd">    Sets cleaned_df so analysis functions can use it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">cleaned_df</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="p">:</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Please select a file first!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Validate file type — redundant since the file picker filters for .xlsx,</span>
+    <span class="c1"># but acts as a safety net if the user types a path manually</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">excel_checker</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Error: Please select an Excel (.xlsx) file!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># reads all sheets into a dict</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">table_merger</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>       <span class="c1"># merges all sheets into one DataFrame</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">null_deleter</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>       <span class="c1"># removes rows with missing values</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">duplicate_deleter</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>  <span class="c1"># removes duplicate rows</span>
+    <span class="n">cleaned_df</span> <span class="o">=</span> <span class="n">df</span>
+
+    <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cleaning done!  (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">cleaned_df</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> rows)&quot;</span><span class="p">)</span>
+    <span class="n">show_table</span><span class="p">(</span><span class="n">cleaned_df</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run_weekday">
+<a class="viewcode-back" href="../main_gui.html#main_gui.run_weekday">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_weekday</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute and display average income per weekday as a bar chart.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cleaned_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Please clean the data first!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">weekday_income</span><span class="p">(</span><span class="n">cleaned_df</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">show_chart</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;Average income by day&quot;</span><span class="p">,</span> <span class="s2">&quot;Average Income by Weekday&quot;</span><span class="p">,</span>
+               <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Day&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Average Income&quot;</span><span class="p">)</span>
+    <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Weekday income done&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run_holiday">
+<a class="viewcode-back" href="../main_gui.html#main_gui.run_holiday">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_holiday</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute holiday vs non-holiday earnings and display two side-by-side bar charts:</span>
+<span class="sd">        - Total earnings comparison</span>
+<span class="sd">        - Average earnings comparison</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cleaned_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Please clean the data first!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">result1</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">result2</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">result1</span><span class="p">,</span> <span class="n">result2</span> <span class="o">=</span> <span class="n">holiday_earnings</span><span class="p">(</span><span class="n">cleaned_df</span><span class="p">)</span>
+    <span class="n">result1</span> <span class="o">=</span> <span class="n">result1</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">result2</span> <span class="o">=</span> <span class="n">result2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="c1"># Map boolean values to readable labels</span>
+    <span class="n">result1</span><span class="p">[</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result1</span><span class="p">[</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;Holiday&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;Non-Holiday&quot;</span><span class="p">})</span>
+    <span class="n">result2</span><span class="p">[</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result2</span><span class="p">[</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;Holiday&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;Non-Holiday&quot;</span><span class="p">})</span>
+
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">results_frame</span><span class="o">.</span><span class="n">winfo_children</span><span class="p">():</span>
+        <span class="n">w</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+
+    <span class="c1"># Split results_frame into left and right halves for the two charts</span>
+    <span class="n">left</span>  <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">results_frame</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">BG</span><span class="p">)</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">results_frame</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">BG</span><span class="p">)</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">fig1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">result1</span><span class="p">[</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">],</span> <span class="n">result1</span><span class="p">[</span><span class="s2">&quot;Holiday vs non-holiday earnings&quot;</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">CHART_COLORS</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">BG</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Total Earnings&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ACCENT</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">fig1</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig1</span><span class="p">,</span> <span class="n">left</span><span class="p">)</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">result2</span><span class="p">[</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">],</span> <span class="n">result2</span><span class="p">[</span><span class="s2">&quot;Average earnings on either holiday or non-holiday&quot;</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">CHART_COLORS</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">BG</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Average Earnings&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ACCENT</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">fig2</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig2</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Holiday earnings done&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run_most_popular">
+<a class="viewcode-back" href="../main_gui.html#main_gui.run_most_popular">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_most_popular</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute and display the top 10 most ordered dishes as a bar chart.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cleaned_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Please clean the data first!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">most_popular_dishes</span><span class="p">(</span><span class="n">cleaned_df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="c1"># Truncate long dish names so they fit on the x-axis</span>
+    <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Name of dish&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Name of dish&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="k">else</span> <span class="n">x</span>
+    <span class="p">)</span>
+    <span class="n">show_chart</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;Name of dish&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;Top 10 Most Popular Dishes&quot;</span><span class="p">,</span>
+               <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Dish Name&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+    <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Most popular dishes done&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run_volume_of_dishes">
+<a class="viewcode-back" href="../main_gui.html#main_gui.run_volume_of_dishes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_volume_of_dishes</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute and display total dish volume per day of the week as a bar chart.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cleaned_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Please clean the data first!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">volume_of_dishes</span><span class="p">(</span><span class="n">cleaned_df</span><span class="p">)</span>
+    <span class="n">show_chart</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;day_of_week&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;Dish Volume by Day&quot;</span><span class="p">,</span>
+               <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Day of Week&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+    <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Volume of dishes done&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run_dish_volume_by_day">
+<a class="viewcode-back" href="../main_gui.html#main_gui.run_dish_volume_by_day">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_dish_volume_by_day</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute and display average order volume per dish per weekday as a table.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cleaned_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Please clean the data first!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">dish_volume_by_day</span><span class="p">(</span><span class="n">cleaned_df</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">show_table</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="n">status</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Dish volume by day done&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># ── Sidebar buttons ───────────────────────────────────────────────────────────</span>
+<span class="n">make_btn</span><span class="p">(</span><span class="s2">&quot;1. Clean Data&quot;</span><span class="p">,</span> <span class="n">run_clean</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">sidebar</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;ANALYSIS&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="n">PANEL</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="n">SUBTEXT</span><span class="p">,</span>
+         <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">make_btn</span><span class="p">(</span><span class="s2">&quot;2. Weekday Income&quot;</span><span class="p">,</span>      <span class="n">run_weekday</span><span class="p">,</span>           <span class="n">ACCENT2</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">make_btn</span><span class="p">(</span><span class="s2">&quot;3. Holiday Earnings&quot;</span><span class="p">,</span>    <span class="n">run_holiday</span><span class="p">,</span>           <span class="n">ACCENT2</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">make_btn</span><span class="p">(</span><span class="s2">&quot;4. Most Popular Dishes&quot;</span><span class="p">,</span> <span class="n">run_most_popular</span><span class="p">,</span>      <span class="n">ACCENT2</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">make_btn</span><span class="p">(</span><span class="s2">&quot;5. Volume of Dishes&quot;</span><span class="p">,</span>    <span class="n">run_volume_of_dishes</span><span class="p">,</span>  <span class="n">ACCENT2</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">make_btn</span><span class="p">(</span><span class="s2">&quot;6. Dish Volume by Day&quot;</span><span class="p">,</span>  <span class="n">run_dish_volume_by_day</span><span class="p">,</span><span class="n">ACCENT2</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># ── Close handler ─────────────────────────────────────────────────────────────</span>
+<div class="viewcode-block" id="on_close">
+<a class="viewcode-back" href="../main_gui.html#main_gui.on_close">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">on_close</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Close all matplotlib figures and destroy the window cleanly on exit.&quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span></div>
+
+
+<span class="n">root</span><span class="o">.</span><span class="n">protocol</span><span class="p">(</span><span class="s2">&quot;WM_DELETE_WINDOW&quot;</span><span class="p">,</span> <span class="n">on_close</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

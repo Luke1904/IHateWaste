@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>data_analysis_package.data_analyzer_first_half &mdash; Restaurant Inventory Analyzer 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=56c4699f" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Restaurant Inventory Analyzer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../data_cleaner.html">Data Cleaner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_cleaner.html#data-cleaner-py">data_cleaner.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_cleaner.html#data_cleaner_package.data_cleaner.table_merger"><code class="docutils literal notranslate"><span class="pre">table_merger()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_cleaner.html#data_cleaner_package.data_cleaner.null_deleter"><code class="docutils literal notranslate"><span class="pre">null_deleter()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_cleaner.html#data_cleaner_package.data_cleaner.duplicate_deleter"><code class="docutils literal notranslate"><span class="pre">duplicate_deleter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_analyzer_first_half.html">Data Analyzer (First Half)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_first_half.html#data-analyzer-first-half-py">data_analyzer_first_half.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.create_calendar"><code class="docutils literal notranslate"><span class="pre">create_calendar()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.weekday_income"><code class="docutils literal notranslate"><span class="pre">weekday_income()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.holiday_earnings"><code class="docutils literal notranslate"><span class="pre">holiday_earnings()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_analyzer_second_half.html">Data Analyzer (Second Half)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_second_half.html#data-analyzer-second-half-py">data_analyzer_second_half.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_second_half.html#data_analysis_package.data_analyzer_second_half.most_popular_dishes"><code class="docutils literal notranslate"><span class="pre">most_popular_dishes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_second_half.html#data_analysis_package.data_analyzer_second_half.volume_of_dishes"><code class="docutils literal notranslate"><span class="pre">volume_of_dishes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_analyzer_second_half.html#data_analysis_package.data_analyzer_second_half.dish_volume_by_day"><code class="docutils literal notranslate"><span class="pre">dish_volume_by_day()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Restaurant Inventory Analyzer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">data_analysis_package.data_analyzer_first_half</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for data_analysis_package.data_analyzer_first_half</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">data_analyzer_first_half.py</span>
+<span class="sd">---------------------------</span>
+<span class="sd">Provides functions to analyze earnings trends by weekday and holiday</span>
+<span class="sd">status. Designed to be imported by main_gui.py.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas.tseries.holiday</span><span class="w"> </span><span class="kn">import</span> <span class="n">USFederalHolidayCalendar</span>
+
+
+<div class="viewcode-block" id="create_calendar">
+<a class="viewcode-back" href="../../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.create_calendar">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_calendar</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a calendar of US federal holidays within the date range of the dataset.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing a datetime column &#39;MONTH_AND_DATE&#39;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DatetimeIndex</span>
+<span class="sd">        A collection of holiday dates between the minimum and maximum</span>
+<span class="sd">        dates present in the dataset.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># -------------------- DATE RANGE EXTRACTION --------------------</span>
+    <span class="c1"># Identify the earliest and latest dates in the dataset</span>
+    <span class="n">start</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;MONTH_AND_DATE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">end</span><span class="p">:</span>   <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;MONTH_AND_DATE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="c1"># -------------------- HOLIDAY CALENDAR --------------------</span>
+    <span class="c1"># Initialize the US Federal Holiday calendar</span>
+    <span class="n">cal</span><span class="p">:</span> <span class="n">USFederalHolidayCalendar</span> <span class="o">=</span> <span class="n">USFederalHolidayCalendar</span><span class="p">()</span>
+
+    <span class="c1"># Generate all holidays within the dataset&#39;s date range</span>
+    <span class="n">holidays</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span> <span class="o">=</span> <span class="n">cal</span><span class="o">.</span><span class="n">holidays</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">holidays</span></div>
+
+
+
+<div class="viewcode-block" id="weekday_income">
+<a class="viewcode-back" href="../../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.weekday_income">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">weekday_income</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the average income per weekday.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing:</span>
+<span class="sd">        - &#39;MONTH_AND_DATE&#39; (date column)</span>
+<span class="sd">        - &#39;PRICE_x&#39; (numeric column representing earnings)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Series</span>
+<span class="sd">        Series indexed by weekday name, containing average income,</span>
+<span class="sd">        sorted in descending order.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># -------------------- DATA PREPARATION --------------------</span>
+    <span class="c1"># Copy DataFrame to avoid modifying the original</span>
+    <span class="n">df_1</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Ensure the date column is properly formatted as datetime</span>
+    <span class="n">df_1</span><span class="p">[</span><span class="s2">&quot;MONTH_AND_DATE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_1</span><span class="p">[</span><span class="s2">&quot;MONTH_AND_DATE&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Extract weekday names (Monday, Tuesday, etc.)</span>
+    <span class="n">df_1</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_1</span><span class="p">[</span><span class="s2">&quot;MONTH_AND_DATE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+
+    <span class="c1"># -------------------- AGGREGATION --------------------</span>
+    <span class="c1"># Compute mean income grouped by weekday</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">=</span> <span class="n">df_1</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;day&quot;</span><span class="p">)[</span><span class="s2">&quot;PRICE_x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># Sort results in descending order</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Assign a descriptive name to the Series</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Average income by day&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+
+<div class="viewcode-block" id="holiday_earnings">
+<a class="viewcode-back" href="../../data_analyzer_first_half.html#data_analysis_package.data_analyzer_first_half.holiday_earnings">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">holiday_earnings</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute total and average earnings for holidays vs non-holidays.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing:</span>
+<span class="sd">        - &#39;MONTH_AND_DATE&#39; (date column)</span>
+<span class="sd">        - &#39;PRICE_x&#39; (numeric earnings column)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple[pd.Series, pd.Series]</span>
+<span class="sd">        - First Series: total earnings for holiday vs non-holiday</span>
+<span class="sd">        - Second Series: average earnings for holiday vs non-holiday</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># -------------------- HOLIDAY DETECTION --------------------</span>
+    <span class="c1"># Generate holiday calendar based on dataset date range</span>
+    <span class="n">holidays</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span> <span class="o">=</span> <span class="n">create_calendar</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="c1"># Create a copy to avoid modifying original data</span>
+    <span class="n">df_2</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Flag rows that fall on holidays</span>
+    <span class="n">df_2</span><span class="p">[</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2</span><span class="p">[</span><span class="s2">&quot;MONTH_AND_DATE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">holidays</span><span class="p">)</span>
+
+    <span class="c1"># -------------------- TOTAL EARNINGS --------------------</span>
+    <span class="n">result1</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">=</span> <span class="n">df_2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">)[</span><span class="s2">&quot;PRICE_x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">result1</span> <span class="o">=</span> <span class="n">result1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">result1</span> <span class="o">=</span> <span class="n">result1</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Holiday vs non-holiday earnings&quot;</span><span class="p">)</span>
+
+    <span class="c1"># -------------------- AVERAGE EARNINGS --------------------</span>
+    <span class="n">result2</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span> <span class="o">=</span> <span class="n">df_2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;is_holiday&quot;</span><span class="p">)[</span><span class="s2">&quot;PRICE_x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">result2</span> <span class="o">=</span> <span class="n">result2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">result2</span> <span class="o">=</span> <span class="n">result2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Average earnings on either holiday or non-holiday&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result1</span><span class="p">,</span> <span class="n">result2</span></div>
+
+
+
+<span class="c1"># -------------------- EXECUTION BLOCK --------------------</span>
+<span class="c1"># This ensures the code only runs when the file is executed directly,</span>
+<span class="c1"># not when imported (important for pytest and modular design)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">mypackage</span><span class="w"> </span><span class="kn">import</span> <span class="n">BASE_DIR</span>
+
+    <span class="c1"># Load the cleaned dataset from the Excel file</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;cleaned_data.xlsx&quot;</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="c1"># Print average income per weekday</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">weekday_income</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+
+    <span class="c1"># Print both total and average holiday earnings</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">holiday_earnings</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,5 +1,11 @@
-docs/build/
+# Python cache files
 __pycache__/
-build/
-__pycache__/
-*.pyc" > .gitignore
+*.pyc
+*.pyo
+*.pyd
+
+# Optional: pytest cache
+.pytest_cache/
+
+# Optional: compiled files
+*.so

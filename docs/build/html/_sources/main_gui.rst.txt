@@ -1,6 +1,6 @@
-Data Cleaner
+GUI (Graphical User Interface)
 ==========================
 
-.. automodule:: data_cleaner_package.data_cleaner
+.. automodule:: main_gui
    :members:
    :member-order: bysource
