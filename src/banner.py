@@ -1,7 +1,7 @@
 import pyfiglet
 
 def print_banner():
-    version = "v1.0.0"
+    version = "v1.1.0"
     # banner text
     banner = pyfiglet.figlet_format("ihatewaste"
     + " " + version, font="slant")
